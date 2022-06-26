@@ -1,0 +1,105 @@
+*{
+    outline: 1px solid red;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#infront{
+    height: 25vh;
+    width: 50%;
+    margin: 0;
+    border-radius: 1rem;
+    position: fixed;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(50%, 150%);
+    font-size: clamp(1rem, 2.5vw, 2rem); 
+}
+
+#logo{
+    background-image: url("logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    width: 25vh;
+    height: 25vh;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+}
+
+#left, #right{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#left{
+    background-color: rgba(255, 228, 196, 0.363);
+    transform: skewX(-15deg) scaleX(1.5) translateX(-8.35vw);
+    transition: 1s ease-in-out;
+}
+
+#right{
+    background-color: rgba(245, 222, 179, 0.432);
+    transform: skewX(-15deg) scaleX(1.5) translateX(8.35vw);
+    transition: 1s ease-in-out;
+}
+
+/* Left Hover Effects */
+#left:hover{
+    transform: skewX(-15deg) scaleX(1.65) translateX(-7.35vw);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Right Hover Effects */
+#right:hover{
+    transform: skewX(-15deg) scaleX(1.65) translateX(7.35vw);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+@media screen and (orientation:portrait){
+    #main{
+        flex-direction: column;
+    }
+
+    #left, #right{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #left{
+        background-color: rgba(255, 228, 196, 0.363);
+        transform: skewX(0deg) scaleX(1) translateX(0);
+    }
+    
+    #right{
+        background-color: rgba(245, 222, 179, 0.432);
+        transform: skewX(0deg) scaleX(1) translateX(0);
+    }
+}
